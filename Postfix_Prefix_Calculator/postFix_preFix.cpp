@@ -37,7 +37,7 @@ void postFix_preFix::postfixCalculate() {
 		{
 			s1.push(str[i] - 48);
 		}
-		else if (str[i] == '+' || str[i] == '-' || str[i] == '*' || str[i] == '/')
+		else if (str[i] == '+' || str[i] == '-' || str[i] == '*' || str[i] == '/' || str[i] == '^')
 		{
 			if (str[i] == '+')
 				s1.push(s1.pop() + s1.pop());
@@ -74,7 +74,7 @@ void postFix_preFix::prefixCalculate() {
 		{
 			s1.push(str[i] - 48);
 		}
-		else if (str[i] == '+' || str[i] == '-' || str[i] == '*' || str[i] == '/')
+		else if (str[i] == '+' || str[i] == '-' || str[i] == '*' || str[i] == '/' || str[i] == '^')
 		{
 			if (str[i] == '+')
 				s1.push(s1.pop() + s1.pop());
@@ -105,8 +105,8 @@ void postFix_preFix::display() {
 	cout << endl << endl << "Sonuc -> " << s1.pop() << endl << endl << endl;
 }
 /**
-* @brief	: String tipinde oluþturulan bu fonksiyon, postfix olarak girilen soruyu prefix hale getirir, prefix olarak girilen soruyu postfix hale getirir.
-* @return	: Yeni oluþturulan str return edilir.
+* @brief	: String tipinde oluÃ¾turulan bu fonksiyon, postfix olarak girilen soruyu prefix hale getirir, prefix olarak girilen soruyu postfix hale getirir.
+* @return	: Yeni oluÃ¾turulan str return edilir.
 */
 string postFix_preFix::prefix_to_postfix() {
 	string str1;
@@ -125,17 +125,17 @@ void postFix_preFix::menu() {
 	int secim;
 	postFix_preFix test;
 	do {
-		cout << "\t MENÜ \n";
-		cout << "\n\t Hangi türde iþlem yapmak istediðnizi seçiniz.";
+		cout << "\t MENÃœ \n";
+		cout << "\n\t Hangi tÃ¼rde iÃ¾lem yapmak istediÃ°nizi seÃ§iniz.";
 		cout << "\n\t[1] - Postfix";
 		cout << "\n\t[2] - Prefix";
-		cout << "\n\t[3] - Çýkýþ";
+		cout << "\n\t[3] - Ã‡Ã½kÃ½Ã¾";
 		cout << endl;
 		cin >> secim;
 		system("cls");
-		if (secim <= 0 || secim > 4 || cin.fail())//Herhangi bir hatali giriste ana menüye geri gidilmesi icin yazýldý.
+		if (secim <= 0 || secim > 4 || cin.fail())//Herhangi bir hatali giriste ana menÃ¼ye geri gidilmesi icin yazÃ½ldÃ½.
 		{
-			cout << "Hatalý giriþ! Menüye yönlendiriliyorsunuz..." << endl;
+			cout << "HatalÃ½ giriÃ¾! MenÃ¼ye yÃ¶nlendiriliyorsunuz..." << endl;
 			Sleep(600);
 			cout << "3" << endl;
 			Sleep(600);
@@ -153,7 +153,7 @@ void postFix_preFix::menu() {
 			cin.ignore();
 			test.getProblem();
 			test.postfixCalculate();
-			cout << "Hesaplanýyor..." << endl;
+			cout << "HesaplanÃ½yor..." << endl;
 			Sleep(400);
 			cout << "3" << endl;
 			Sleep(300);
@@ -163,7 +163,7 @@ void postFix_preFix::menu() {
 			Sleep(200);
 			test.display();
 			int secim2;
-			cout << "Girilen deðerin postfix gösterimini görmek için [1], menüye dönmek herhangi baþka bir tuþa basýnýz.";
+			cout << "Girilen deÃ°erin postfix gÃ¶sterimini gÃ¶rmek iÃ§in [1], menÃ¼ye dÃ¶nmek herhangi baÃ¾ka bir tuÃ¾a basÃ½nÃ½z.";
 			cin >> secim2;
 			if (secim2 == 1)
 			{
@@ -181,7 +181,7 @@ void postFix_preFix::menu() {
 			cin.ignore();
 			test.getProblem();
 			test.prefixCalculate();
-			cout << "Hesaplanýyor..." << endl;
+			cout << "HesaplanÃ½yor..." << endl;
 			Sleep(400);
 			cout << "3" << endl;
 			Sleep(300);
@@ -191,7 +191,7 @@ void postFix_preFix::menu() {
 			Sleep(200);
 			test.display();
 			int secim2;
-			cout << "Girilen deðerin prefix gösterimini görmek için [1], menüye dönmek için [2].";
+			cout << "Girilen deÃ°erin prefix gÃ¶sterimini gÃ¶rmek iÃ§in [1], menÃ¼ye dÃ¶nmek iÃ§in [2].";
 			cin >> secim2;
 			if (secim2 == 1)
 			{

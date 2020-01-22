@@ -18,7 +18,6 @@ struct StackNode {
 */
 class stack
 {
-	friend struct StackNode;
 private:
 	StackNode *top1;
 public:
